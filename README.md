@@ -49,7 +49,7 @@
 | postal_code     | string    | null: false       |
 | prefectures_id  | integer   | null: false       |              
 | municipality    | string    | null: false       |              
-| house_number    | integer   | null: false       |
+| house_number    | string    | null: false       |
 | building        | string    |                   |              
 | phone_number    | string    | null: false       |                          
 | order           | references| foreign_key: true |
