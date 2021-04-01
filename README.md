@@ -29,9 +29,9 @@
 | information       | text      | null: false       |              
 | category_id       | integer   | null: false       |              
 | status_id         | integer   | null: false       | 
-| prefectures_id    | integer   | null: false       |                
+| prefecture_id     | integer   | null: false       |                
 | delivery_price_id | integer   | null: false       |              
-| delivery_days_id  | integer   | null: false       |               
+| delivery_day_id   | integer   | null: false       |               
 | item_price        | integer   | null: false       |             
 | user              | references| foreign_key: true |
 
@@ -47,7 +47,7 @@
 | Column          | Type      | Options           |              
 | ---------       | ------    | -----------       |              
 | postal_code     | string    | null: false       |
-| prefectures_id  | integer   | null: false       |              
+| prefecture_id   | integer   | null: false       |              
 | municipality    | string    | null: false       |              
 | house_number    | string    | null: false       |
 | building        | string    |                   |              
