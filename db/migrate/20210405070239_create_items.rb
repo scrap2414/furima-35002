@@ -15,13 +15,3 @@ class CreateItems < ActiveRecord::Migration[6.0]
   end
 end
 
-
-| name              | string    | null: false       |
-| information       | text      | null: false       |              
-| category_id       | integer   | null: false       |              
-| status_id         | integer   | null: false       | 
-| prefecture_id     | integer   | null: false       |                
-| delivery_price_id | integer   | null: false       |              
-| delivery_day_id   | integer   | null: false       |               
-| item_price        | integer   | null: false       |             
-| user              | references| foreign_key: true |
