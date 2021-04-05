@@ -3,11 +3,11 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :status
   belongs_to :prefecture
+  belongs_to :deliveryprice
 
 
   validates :name, presence: true
   validates :information, presence: true
-  validates :delivery_price_id, presence: true
   validates :delivery_day_id, presence: true
   validates :item_price, presence: true
 
@@ -20,6 +20,7 @@ class Item < ApplicationRecord
   validates :category_id, numericality: { other_than: 1 } 
   validates :status_id, numericality: { other_than: 1 } 
   validates :prefecture_id, numericality: { other_than: 1 } 
+  validates :deliveryprice_id, numericality: { other_than: 1 } 
 end
 
 

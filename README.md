@@ -30,9 +30,9 @@
 | category_id       | integer   | null: false       |              
 | status_id         | integer   | null: false       | 
 | prefecture_id     | integer   | null: false       |                
-| delivery_price_id | integer   | null: false       |              
-| delivery_day_id   | integer   | null: false       |               
-| item_price        | integer   | null: false       |             
+| deliveryprice_id  | integer   | null: false       |              
+| deliveryday_id    | integer   | null: false       |               
+| itemprice         | integer   | null: false       |             
 | user              | references| foreign_key: true |
 
 ### Association
