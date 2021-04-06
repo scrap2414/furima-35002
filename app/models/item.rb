@@ -9,8 +9,9 @@ class Item < ApplicationRecord
 
   validates :name, presence: true
   validates :information, presence: true
-  validates :itemprice, numericality: {less_than: 9999999,greater_than: 299}
-
+  validates :itemprice, numericality: {less_than: 9999999,greater_than: 299},
+  format: { with: /\A[0-9]+\z/}
+  
 
   belongs_to :user
   has_one    :order
