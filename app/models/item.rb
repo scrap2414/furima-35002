@@ -1,5 +1,10 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+
+  belongs_to :user
+  has_one    :order
+  has_one_attached :image
+
   belongs_to :category
   belongs_to :status
   belongs_to :prefecture
@@ -10,12 +15,8 @@ class Item < ApplicationRecord
   validates :name, presence: true
   validates :information, presence: true
   validates :itemprice, numericality: {less_than: 9999999,greater_than: 299},
-  format: { with: /\A[0-9]+\z/}
-  
-
-  belongs_to :user
-  has_one    :order
-  has_one_attached :image
+  format: { with: /\A[0-9]+\z/} 
+  validates :image,  presence: true
 
 
   #ジャンルの選択が「--」の時は保存できないようにする
