@@ -2,12 +2,12 @@ FactoryBot.define do
   factory :item do
     name  { 'テスト' }
     information { 'テスト' }
-    category_id { '2' }
-    status_id { '2' }
-    prefecture_id { '2' }
-    deliveryprice_id { '2' }
-    deliveryday_id { '2' }
-    itemprice { '800' }
+    category_id { 2 }
+    status_id { 2 }
+    prefecture_id { 2 }
+    deliveryprice_id { 2 }
+    deliveryday_id { 2 }
+    itemprice { 800 }
     association :user
 
     after(:build) do |item|
