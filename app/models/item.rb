@@ -9,7 +9,8 @@ class Item < ApplicationRecord
 
   validates :name, presence: true
   validates :information, presence: true
-  validates :itemprice, presence: true
+  validates :itemprice, numericality: {less_than: 9999999,greater_than: 299}
+
 
   belongs_to :user
   has_one    :order
@@ -22,6 +23,9 @@ class Item < ApplicationRecord
   validates :prefecture_id, numericality: { other_than: 1 } 
   validates :deliveryprice_id, numericality: { other_than: 1 } 
   validates :deliveryday_id, numericality: { other_than: 1 } 
+
+ 
+
 end
 
 
