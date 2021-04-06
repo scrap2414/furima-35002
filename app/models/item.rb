@@ -11,15 +11,21 @@ class Item < ApplicationRecord
   belongs_to :deliveryprice
   belongs_to :deliveryday
 
-  validates :name, presence: true
-  validates :information, presence: true
-  validates :itemprice, numericality: { less_than: 9_999_999, greater_than: 299 },
-                        format: { with: /\A[0-9]+\z/ }
-  validates :image, presence: true
+  with_options presence: true do
+    validates :name
+    validates :information
+    validates :image
 
-  validates :category_id, numericality: { other_than: 1 }
-  validates :status_id, numericality: { other_than: 1 }
-  validates :prefecture_id, numericality: { other_than: 1 }
-  validates :deliveryprice_id, numericality: { other_than: 1 }
-  validates :deliveryday_id, numericality: { other_than: 1 }
+    with_options numericality: { other_than: 1 } do
+      validates :category_id
+      validates :status_id
+      validates :prefecture_id
+      validates :deliveryprice_id
+      validates :deliveryday_id
+    end
+    with_options numericality: { less_than: 9_999_999, greater_than: 299 },
+                 format: { with: /\A[0-9]+\z/ } do
+      validates :itemprice
+    end
+  end
 end

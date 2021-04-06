@@ -84,17 +84,15 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Itemprice must be greater than 299')
       end
       it '販売価格が半角数字でなければ出品できない（上方）' do
-        @item.itemprice = 200000000
+        @item.itemprice = 200_000_000
         @item.valid?
         expect(@item.errors.full_messages).to include('Itemprice must be less than 9999999')
       end
-
       it '画像が空では出品できない' do
         @item.image = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Image can't be blank")
       end
-
       it 'ユーザー情報が紐付いてないと出品できない' do
         @item.user = nil
         @item.valid?
