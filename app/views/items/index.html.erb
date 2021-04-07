@@ -112,21 +112,19 @@
       </li>
     </ul>
   </div>
-  <%# /FURIMAの特徴 %>
 
-  <%# 商品一覧 %>
   <div class='item-contents'>
     <h2 class='title'>ピックアップカテゴリー</h2>
     <%= link_to '新規投稿商品', "#", class: "subtitle" %>
     <ul class='item-lists'>
       <% @items.each do |item| %>
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+    
       <li class='list'>
         
         <div class='item-img-content'>
           <%= link_to image_tag(item.image,class:'item-img'),"#" %>
 
-          <%# 商品が売れていればsold outを表示しましょう %>
+   
           <%# 商品出品機能実装後に実装 %>
           <%# <div class='sold-out'>
             <span>Sold Out!!</span>
@@ -147,9 +145,8 @@
         </div>
         
       </li>
-      <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
-      <%# 商品がない場合は以下のダミー商品が表示されるようにしましょう %>
-      <%# 商品がある場合は表示されないようにしましょう %>
+      <% end %> 
+
       <% if @items == nil %>
       <li class='list'>
         <%= link_to '#' do %>
@@ -166,15 +163,14 @@
             </div>
           </div>
         </div>
-        <% end %>
+      <% end %>
       </li>
       <% end %>
-      <%# //商品がある場合は表示されないようにしましょう %>
-      <%# //商品がない場合は以下のダミー商品が表示されるようにしましょう %>
-      <% end %> 
+
+      
     </ul>
   </div>
-  <%# /商品一覧 %>
+  
 </div>
 <%= link_to(new_item_path, class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>出品する</span>
