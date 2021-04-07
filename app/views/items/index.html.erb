@@ -118,13 +118,9 @@
     <%= link_to '新規投稿商品', "#", class: "subtitle" %>
     <ul class='item-lists'>
       <% @items.each do |item| %>
-    
       <li class='list'>
-        
         <div class='item-img-content'>
           <%= link_to image_tag(item.image,class:'item-img'),"#" %>
-
-   
           <%# 商品出品機能実装後に実装 %>
           <%# <div class='sold-out'>
             <span>Sold Out!!</span>
@@ -143,7 +139,6 @@
             </div>
           </div>
         </div>
-        
       </li>
       <% end %> 
 
@@ -166,11 +161,8 @@
       <% end %>
       </li>
       <% end %>
-
-      
     </ul>
   </div>
-  
 </div>
 <%= link_to(new_item_path, class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>出品する</span>
