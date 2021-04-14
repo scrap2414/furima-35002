@@ -58,6 +58,6 @@ class ItemsController < ApplicationController
 
   def sold_out
     @item = Item.find(params[:id])
-    redirect_to action: :index if  @item.order.present?
+    redirect_to action: :index if @item.order.present?
   end
 end
