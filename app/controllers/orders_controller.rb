@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
       @order_address.save
       redirect_to root_path
     else
-      @item = Item.find(params[:item_id])
+      item_status
       render :index
     end
   end
